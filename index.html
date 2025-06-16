@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fabric Finder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Welcome to Fabric Finder!</h1>
+    <p>Your one-stop solution for tailors in Onitsha to find the perfect fabric.</p>
+    <div class="back-link" style="margin-top: 30px;">
+        <p><a href="admin.html">Admin Dashboard</a></p>
+    </div>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
+  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-auth.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyDPP46XdmwRbv-6Dyz71u2m8iozJJgf_zA",
+    authDomain: "fabricfinderapp.firebaseapp.com",
+    projectId: "fabricfinderapp",
+    storageBucket: "fabricfinderapp.firebasestorage.app",
+    messagingSenderId: "65017869408",
+    appId: "1:65017869408:web:a496fa35d5749cfc76bf05"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+
+  // Example: Sign up function
+  function signUp(email, password) {
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed up 
+        const user = userCredential.user;
+        console.log('Sign Up Successful!', user);
+      })
+      .catch((error) => {
+        console.error('Sign Up Error', error);
+      });
+  }
+
+  // Example: Sign in function
+  function signIn(email, password) {
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed in 
+        const user = userCredential.user;
+        console.log('Sign In Successful!', user);
+      })
+      .catch((error) => {
+        console.error('Sign In Error', error);
+      });
+  }
+</script>
+</body>
+</html>

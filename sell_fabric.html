@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fabric Finder - List Fabric</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+
+    <div class="container">
+        <h2>List Your Fabric</h2>
+        <p>Fill in the details below to list your fabric for tailors to find.</p>
+
+        <div id="welcomeMessage" style="margin-bottom:10px;"></div>
+        <div id="loadingSpinner" style="display:none; color:#3498db; font-weight:bold;">Loading...</div>
+
+        <div class="form-group">
+            <label for="fabricPhoto">Fabric Photo:</label>
+            <input type="file" id="fabricPhoto" name="fabricPhoto" accept="image/*" required>
+        </div>
+
+        <div class="form-group">
+            <label for="descriptionTags">Descriptive Tags (e.g., Ankara, Blue, Pattern):</label>
+            <input type="text" id="descriptionTags" name="descriptionTags" placeholder="Separate tags with commas" required>
+        </div>
+
+        <div class="form-group">
+            <label for="shortDescription">Short Description (e.g., Quality Hollandix Print, 6 yards):</label>
+            <textarea id="shortDescription" name="shortDescription" rows="4" placeholder="Enter a brief description of the fabric" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="sellerName">Your Name/Shop Name:</label>
+            <input type="text" id="sellerName" name="sellerName" placeholder="e.g., Mama Ngozi Fabrics" required>
+        </div>
+
+        <div class="form-group">
+            <label for="phoneNumber">Phone Number:</label>
+            <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="e.g., 08012345678" required>
+        </div>
+
+        <div class="form-group">
+            <label for="shopLocation">Shop Number/Location:</label>
+            <input type="text" id="shopLocation" name="shopLocation" placeholder="e.g., Shop 12B, Main Market" required>
+        </div>
+
+        <button type="submit" class="btn">List Fabric</button>
+        <button id="logoutButton" class="btn" style="margin-top:10px;">Logout</button>
+
+        <div class="back-link" style="margin-top: 30px;">
+            <p><a href="my_listings.html">View My Listings</a></p>
+        </div>
+
+    </div> 
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
+  import { getFirestore } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-firestore.js";
+  // No Storage or Auth imports for now
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyDPP46XdmwRbv-6Dyz71u2m8iozJJgf_zA",
+    authDomain: "fabricfinderapp.firebaseapp.com",
+    projectId: "fabricfinderapp",
+    storageBucket: "fabricfinderapp.firebasestorage.app",
+    messagingSenderId: "65017869408",
+    appId: "1:65017869408:web:a496fa35d5749cfc76bf05"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  window.db = getFirestore(app); // Make Firestore globally accessible for sell.js
+</script>
+<script src="sell.js" type="module"></script>
+</body>
+</html>

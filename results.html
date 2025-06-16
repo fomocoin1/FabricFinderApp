@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fabric Finder - Search Results</title>
+    <link rel="stylesheet" href="style.css"> <style>
+        /* Specific styles for results page - added directly for now */
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid columns */
+            gap: 20px; /* Space between grid items */
+            margin-top: 20px;
+        }
+
+        .fabric-card {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .fabric-card img {
+            max-width: 100%; /* Ensures image fits within its container */
+            height: auto; /* Maintains aspect ratio */
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        .fabric-card h4 {
+            color: #3498db;
+            margin-top: 0;
+            margin-bottom: 5px;
+        }
+
+        .fabric-card p {
+            font-size: 0.95em;
+            color: #555;
+            margin-bottom: 5px;
+            line-height: 1.4;
+        }
+
+        .fabric-card .seller-info {
+            font-size: 0.85em;
+            color: #777;
+            margin-top: 10px;
+            border-top: 1px dashed #eee;
+            padding-top: 10px;
+        }
+
+        .fabric-card .seller-info strong {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Fabric Search Results</h2>
+        <p>Showing results for: "<span id="searchQueryDisplay">Your Search Here</span>"</p>
+
+        <div class="results-grid">
+            <div class="fabric-card">
+                <img src="https://via.placeholder.com/280x200?text=Ankara+Fabric" alt="Ankara Fabric">
+                <h4>Ankara Print (Blue & Yellow)</h4>
+                <p>Quality Hollandix Print, 6 yards, vibrant colors. Perfect for traditional wear.</p>
+                <div class="seller-info">
+                    <strong>Seller:</strong> Mama Ngozi Fabrics<br>
+                    <strong>Phone:</strong> 08012345678<br>
+                    <strong>Location:</strong> Shop 12B, Main Market
+                </div>
+            </div>
+
+            <div class="fabric-card">
+                <img src="https://via.placeholder.com/280x200?text=Lace+Fabric" alt="Lace Fabric">
+                <h4>Swiss Voile Lace (White)</h4>
+                <p>Elegant Swiss Voile Lace, 5 yards, delicate embroidery. Ideal for special occasions.</p>
+                <div class="seller-info">
+                    <strong>Seller:</strong> Grace Textiles<br>
+                    <strong>Phone:</strong> 07098765432<br>
+                    <strong>Location:</strong> Stall C5, New Market
+                </div>
+            </div>
+
+            </div>
+
+        <div class="back-link" style="margin-top: 30px;">
+            <p><a href="search_fabric.html">Back to Search</a></p>
+        </div>
+    </div>
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
+      import { getFirestore } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-firestore.js";
+      // Only Firestore for now
+      const firebaseConfig = {
+        apiKey: "AIzaSyDPP46XdmwRbv-6Dyz71u2m8iozJJgf_zA",
+        authDomain: "fabricfinderapp.firebaseapp.com",
+        projectId: "fabricfinderapp",
+        storageBucket: "fabricfinderapp.firebasestorage.app",
+        messagingSenderId: "65017869408",
+        appId: "1:65017869408:web:a496fa35d5749cfc76bf05"
+      };
+      const app = initializeApp(firebaseConfig);
+      window.db = getFirestore(app);
+    </script>
+    <script src="results.js" type="module"></script>
+</body>
+</html>

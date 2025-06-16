@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, sans-serif; /* Changes the default font */
+    background-color: #f4f4f4; /* A light grey background */
+    color: #333; /* Dark grey text color */
+    margin: 20px; /* Adds some space around the content */
+    text-align: center; /* Centers the text content */
+}
+
+h1 {
+    color: #2c3e50; /* A dark blue for the heading */
+    padding-bottom: 10px; /* Space below the heading */
+    border-bottom: 2px solid #3498db; /* A blue line under the heading */
+}
+
+p {
+    font-size: 1.1em; /* Makes the paragraph text slightly larger */
+    line-height: 1.6; /* Increases space between lines of text */
+}/* General body styles (already added, just for context) */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0; /* Changed margin to 0 to allow container to center */
+    display: flex; /* Use flexbox for centering content vertically and horizontally */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    min-height: 100vh; /* Make body at least viewport height */
+}
+
+/* Container for the login form */
+.container {
+    background-color: #fff; /* White background for the form box */
+    padding: 30px;
+    border-radius: 8px; /* Slightly rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    width: 100%; /* Take full width on small screens */
+    max-width: 400px; /* Maximum width for larger screens */
+    text-align: center; /* Center text within the container */
+}
+
+.container h2, .container h3 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+/* Form group for labels and inputs */
+.form-group {
+    margin-bottom: 15px; /* Space between form fields */
+    text-align: left; /* Align labels/inputs to the left within their group */
+}
+
+.form-group label {
+    display: block; /* Makes the label take up its own line */
+    margin-bottom: 5px; /* Space between label and input */
+    font-weight: bold; /* Make label text bold */
+    color: #555;
+}
+
+.form-group input[type="email"],
+.form-group input[type="password"] {
+    width: calc(100% - 20px); /* Full width minus padding */
+    padding: 10px;
+    border: 1px solid #ddd; /* Light grey border */
+    border-radius: 4px; /* Slightly rounded input fields */
+    font-size: 1em;
+}
+
+/* Button styling */
+.btn {
+    background-color: #3498db; /* Blue button */
+    color: white; /* White text on button */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer; /* Changes cursor to a hand when hovering */
+    font-size: 1.1em;
+    margin-top: 10px;
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+.btn:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+}
+
+/* Style for the "switch form" links */
+.switch-form {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.switch-form a {
+    color: #3498db; /* Blue links */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold;
+}
+
+.switch-form a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
