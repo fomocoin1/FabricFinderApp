@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fabric Finder - Search</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+
+    <div class="container">
+        <h2>Find Your Perfect Fabric</h2>
+        <p>Enter keywords to search for fabrics (e.g., blue ankara, lace, George).</p>
+        <div id="welcomeMessage" style="margin-bottom:10px;"></div>
+        <div id="loadingSpinner" style="display:none; color:#3498db; font-weight:bold;">Loading...</div>
+        <form id="searchForm">
+            <div class="form-group">
+                <label for="searchQuery">Search for Fabric:</label>
+                <input type="text" id="searchQuery" name="searchQuery" placeholder="Enter fabric tags" required>
+            </div>
+            <button type="submit" class="btn" id="searchButton">Search Fabrics</button>
+        </form>
+        <div id="searchResults"></div>
+        <div class="back-link">
+            <p><a href="login.html">Back to Login/Register</a></p>
+            <p><a href="my_listings.html">View My Listings</a></p>
+            <button id="logoutButton" class="btn" style="margin-top:10px;">Logout</button>
+        </div>
+        <div id="favoritesSection"></div>
+    </div>
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
+  import { getFirestore } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-firestore.js";
+  // Only Firestore for now
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyDPP46XdmwRbv-6Dyz71u2m8iozJJgf_zA",
+    authDomain: "fabricfinderapp.firebaseapp.com",
+    projectId: "fabricfinderapp",
+    storageBucket: "fabricfinderapp.firebasestorage.app",
+    messagingSenderId: "65017869408",
+    appId: "1:65017869408:web:a496fa35d5749cfc76bf05"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  window.db = getFirestore(app); // Make Firestore globally accessible for search.js
+</script>
+<script src="search.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fabric Finder - Login/Register</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Welcome to Fabric Finder!</h2>
+        <h3 id="formTitle">Login</h3>
+        <form id="authForm">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            </div>
+
+            <div class="form-group" id="confirmPasswordGroup" style="display: none;">
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password">
+            </div>
+
+            <button type="submit" class="btn" id="authButton">Login</button>
+        </form>
+
+        <p class="error-message" id="errorMessage" style="color: red; margin-top: 10px;"></p>
+        <div class="switch-form">
+            <p>
+                <span id="switchText">Don't have an account?</span>
+                <a href="#" id="switchModeLink">Register here</a>
+            </p>
+            <p>Are you a fabric seller? <a href="#" id="sellerRegisterLink">Register as Seller</a></p>
+        </div>
+
+    </div>
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
+      import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-auth.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyDPP46XdmwRbv-6Dyz71u2m8iozJJgf_zA",
+        authDomain: "fabricfinderapp.firebaseapp.com",
+        projectId: "fabricfinderapp",
+        storageBucket: "fabricfinderapp.firebasestorage.app",
+        messagingSenderId: "65017869408",
+        appId: "1:65017869408:web:a496fa35d5749cfc76bf05"
+      };
+
+      const app = initializeApp(firebaseConfig);
+      window.auth = getAuth(app); // Make 'auth' globally accessible
+    </script>
+
+    <script src="auth.js" type="module"></script>
+</body>
+</html>
